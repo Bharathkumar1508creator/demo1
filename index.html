@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EyeGuard Services</title>
+
+    <!-- BOOTSTRAP 5.3.8 -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- LEXEND GIGA -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lexend+Giga:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <style>
+        /* ==================================================
+           GLOBAL
+        ================================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            width: 100%;
+            overflow-x: hidden;
+        }
+
+        body {
+            background: #ffffff;
+            font-family: 'Lexend Giga', sans-serif;
+        }
+
+        /* ==================================================
+           BASE : 320px - 374px
+           --gutter = left/right space around the stage
+        ================================================== */
+        :root {
+            --gutter: 12px;
+        }
+
+        .service-section {
+            position: relative;
+            width: 100%;
+            padding-bottom: 40px;
+            overflow: hidden;
+        }
+
+        /* ==================================================
+           FIGMA GROUP 47964  (1240 x 670)
+           --sw = current stage width (max 1240px)
+        ================================================== */
+        .serviceStage {
+            --sw: min(1240px, calc(100vw - 2 * var(--gutter)));
+
+            position: relative;
+            width: var(--sw);
+            aspect-ratio: 1240 / 670;
+            margin-top: calc(var(--sw) * 0.083871);   /* 104 / 1240 */
+        }
+
+        /* ==================================================
+           FIGMA GROUP 47963  (780 x 200, left 230, top 0)
+        ================================================== */
+        .serviceContent {
+            position: absolute;
+            top: 0;
+            left: 18.548%;          /* 230 / 1240 */
+            width: 62.903%;         /* 780 / 1240 */
+            height: 29.851%;        /* 200 / 670  */
+            z-index: 10;
+        }
+
+        /* H1 : 780 x 100 , font 39.81 */
+        .serviceContent h1 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 50%;            /* 100 / 200 */
+            margin: 0;
+
+            font-family: 'Lexend Giga', sans-serif;
+            font-weight: 700;
+            font-size: calc(var(--sw) * 0.032105);    /* 39.81 / 1240 */
+            line-height: 125%;
+            letter-spacing: -0.1em;
+            text-align: center;
+            white-space: nowrap;
+            color: #000000;
+        }
+
+        /* P : 497 x 20 , left 130 , top 116 , font 13 */
+        .serviceContent p {
+            position: absolute;
+            top: 58%;               /* 116 / 200 */
+            left: 16.667%;          /* 130 / 780 */
+            width: 63.718%;         /* 497 / 780 */
+            height: 10%;            /* 20 / 200  */
+            margin: 0;
+
+            font-family: 'Lexend Giga', sans-serif;
+            font-weight: 400;
+            font-size: calc(var(--sw) * 0.010484);    /* 13 / 1240 */
+            line-height: 150%;
+            letter-spacing: -0.07em;
+            text-align: center;
+            white-space: nowrap;
+            color: #000000;
+        }
+
+        /* BUTTON : 279 x 40 , left 250.5 , top 160 , font 16 */
+        .serviceButton {
+            position: absolute;
+            top: 80%;               /* 160 / 200 */
+            left: 32.115%;          /* 250.5 / 780 */
+            width: 35.769%;         /* 279 / 780 */
+            height: 20%;            /* 40 / 200  */
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: calc(var(--sw) * 0.00645) calc(var(--sw) * 0.01290);
+            gap: calc(var(--sw) * 0.00806);
+
+            font-family: 'Lexend Giga', sans-serif;
+            font-weight: 400;
+            font-size: calc(var(--sw) * 0.012903);    /* 16 / 1240 */
+            line-height: 150%;
+            letter-spacing: -0.07em;
+            white-space: nowrap;
+
+            color: #ffffff;
+            background: #021C59;
+            border: none;
+            border-radius: calc(var(--sw) * 0.00645); /* 8 / 1240 */
+            cursor: pointer;
+            z-index: 20;
+        }
+
+        .serviceButton:hover,
+        .serviceButton:focus,
+        .serviceButton:active {
+            background: #021C59;
+            color: #ffffff;
+        }
+
+        /* ==================================================
+           FIGMA GROUP 47942  (1240 x 585.16 , top 84.84)
+        ================================================== */
+        .serviceImageWrapper {
+            position: absolute;
+            top: 12.663%;           /* 84.84 / 670  */
+            left: 0;
+            width: 100%;
+            height: 87.337%;        /* 585.16 / 670 */
+            z-index: 1;
+        }
+
+        .serviceImage {
+            display: block;
+            width: 100%;
+            height: 100%;
+            max-width: none;
+            object-fit: cover;
+            border-radius: calc(var(--sw) * 0.024219);   /* 30.03 / 1240 */
+        }
+
+        /* ==================================================
+           375px - 479px
+        ================================================== */
+        @media (min-width: 375px) {
+            :root { --gutter: 16px; }
+        }
+
+        /* ==================================================
+           480px - 575px
+        ================================================== */
+        @media (min-width: 480px) {
+            :root { --gutter: 20px; }
+        }
+
+        /* ==================================================
+           576px - 767px
+        ================================================== */
+        @media (min-width: 576px) {
+            :root { --gutter: 24px; }
+        }
+
+        /* ==================================================
+           768px - 991px
+        ================================================== */
+        @media (min-width: 768px) {
+            :root { --gutter: 32px; }
+        }
+
+        /* ==================================================
+           992px - 1279px
+        ================================================== */
+        @media (min-width: 992px) {
+            :root { --gutter: 40px; }
+        }
+
+        /* ==================================================
+           1280px - 1439px
+        ================================================== */
+        @media (min-width: 1280px) {
+            :root { --gutter: 60px; }
+        }
+
+        /* ==================================================
+           1440px - 1919px
+           1440 - (2 x 100) = exact 1240px Figma size
+        ================================================== */
+        @media (min-width: 1440px) {
+            :root { --gutter: 100px; }
+        }
+
+        /* ==================================================
+           1920px AND ABOVE
+           Figma size stays exact 1240px, centered
+        ================================================== */
+        @media (min-width: 1920px) {
+            .serviceStage {
+                --sw: 1240px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ===================== NAVBAR HERE ===================== -->
+
+
+    <!-- =====================================================
+         SERVICE SECTION
+    ====================================================== -->
+    <section class="service-section">
+
+        <div class="container-fluid px-0">
+
+            <div class="row mx-0">
+
+                <div class="col-12 px-0">
+
+                    <!-- FIGMA GROUP 47964 -->
+                    <div class="serviceStage mx-auto">
+
+                        <!-- FIGMA GROUP 47963 -->
+                        <div class="serviceContent">
+
+                            <h1>
+                                Installation, Support &amp; Security
+                                <br>
+                                Services You Can Rely On
+                            </h1>
+
+                            <p>
+                                Cabling, diagnostics, and AMCs keep systems running smoothly.
+                            </p>
+
+                            <button type="button" class="serviceButton">
+                                Discuss Your Requirement
+                            </button>
+
+                        </div>
+
+                        <!-- FIGMA GROUP 47942 -->
+                        <div class="serviceImageWrapper">
+
+                            <img
+                                src="ServicesImg.png"
+                                alt="Installation, Support and Security Services"
+                                class="serviceImage"
+                            >
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- BOOTSTRAP JS -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    ></script>
+
+</body>
+
+</html>
